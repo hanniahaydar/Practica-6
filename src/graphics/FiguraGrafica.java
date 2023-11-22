@@ -28,13 +28,6 @@ public abstract class FiguraGrafica {
     }
 
     public abstract void dibujar(Graphics g) {
-        if(figura.equals("cuadrado")){
-            g.drawRect(15, 15, 50, 50);
-        } else if (figura.equals("rectangulo")){
-            g.drawRect(15, 15, 50, 100);            
-        } else if (figura.equals("triangulo")) {
-            g.drawPolygon(new int[]{50, 15, 85}, new int[]{15, 65, 65}, 3);
-        }
     }
     
     public abstract void encojer(Graphics g){

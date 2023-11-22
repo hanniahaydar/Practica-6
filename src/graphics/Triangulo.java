@@ -20,23 +20,34 @@ private	int[]	y	=	{15,	65,	65};
     }
 
     @Override
-    public void encojer(Graphics g) {
-        g.drawPolygon(x,	y,	3);
-}
+    public	void	encojer(Graphics	g)	{
+ x[1]	+=	5;	y[1]	-=	5;
+ x[2]	-=	5;	y[2]	-=	5;
+ this.dibujar(g);
+			}
 
     @Override
     public void agrandar(Graphics g) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+        public	void	agrandar(Graphics	g)	{
+	x[1]	-=	5;	y[1]	+=	5;
+	x[2]	+=	5;	y[2]	+=	5;
+	this.dibujar(g);
+			}
 
     @Override
-    public void cambiarColor(Graphics g, Color c) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public void mover(Graphics g, String direccion) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+     public	void	cambiarColor(Graphics	g,	Color	c)	{
+  g.setColor(c);
+  this.dibujar(g);
+			}
     
-}
+    
+    @Override
+    	public	void	mover(Graphics	g,	String	direccion)	{
+		switch(direccion)	{
+                    case "arriba”	:	y[0]-=5;	y[1]-=5;	y[2]-=5; break;
+                 case "abajo” :	y[0]+=5;	y[1]+=5;	y[2]+=5; break;
+	         case	"izquierda” :	x[0]-=5;	x[1]-=5;	x[2]-=5; break;
+		case	“derecha”	:	x[0]-=5;	x[1]+=5;	x[2]+=5;	break;
+		}
+		this.dibujar(g);
+		}
