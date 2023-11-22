@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
  * geométrica. Tu misión es aplicar con éxito los principios del Polimorfismo
  * que aprendiste anteriormente. ¡Suerte!
  */
-public class FiguraGrafica {
+public abstract class FiguraGrafica {
     
     protected String figura;
     
@@ -27,7 +27,7 @@ public class FiguraGrafica {
         this.figura = figura;
     }
 
-    public void dibujar(Graphics g) {
+    public abstract void dibujar(Graphics g) {
         if(figura.equals("cuadrado")){
             g.drawRect(15, 15, 50, 50);
         } else if (figura.equals("rectangulo")){
@@ -37,7 +37,7 @@ public class FiguraGrafica {
         }
     }
     
-    public void encojer(Graphics g){
+    public abstract void encojer(Graphics g){
         if(figura.equals("cuadrado")){
             g.drawRect(15, 15, 20, 20);
         } else if (figura.equals("rectangulo")){
@@ -47,7 +47,7 @@ public class FiguraGrafica {
         }
     }
     
-    public void agrandar(Graphics g){
+    public abstract void agrandar(Graphics g){
         if(figura.equals("cuadrado")){
             g.drawRect(15, 15, 20, 20);
         } else if (figura.equals("rectangulo")){
@@ -57,12 +57,12 @@ public class FiguraGrafica {
         }
     }
     
-    public void cambiarColor(Graphics g, Color c){
+    public abstract void cambiarColor(Graphics g, Color c){
         g.setColor(c);
         this.dibujar(g);
     }
     
-    public void mover(Graphics g, String direccion){
+    public abstract void mover(Graphics g, String direccion){
         // WTF?
         // Como muevo a un triangulo!!!???
         // Esto no estaba en mi contrato!!!
